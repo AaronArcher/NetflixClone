@@ -14,6 +14,7 @@ class MediaTableViewCell: UITableViewCell {
     private let mediaPosterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -26,6 +27,9 @@ class MediaTableViewCell: UITableViewCell {
     
     private let playMediaButton: UIButton = {
         let button = UIButton()
+        let image = UIImage(systemName: "play.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -47,23 +51,31 @@ class MediaTableViewCell: UITableViewCell {
     private func applyConstraints() {
         let mediaPosterConstraints = [
             mediaPosterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            mediaPosterImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            mediaPosterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            mediaPosterImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            mediaPosterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             mediaPosterImageView.widthAnchor.constraint(equalToConstant: 100)
         ]
         
         let mediaLabelConstraints = [
-            mediaLabel.leadingAnchor.constraint(equalTo: mediaPosterImageView.trailingAnchor, constant: 20)
+            mediaLabel.leadingAnchor.constraint(equalTo: mediaPosterImageView.trailingAnchor, constant: 20),
+            mediaLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ]
+        
+        let playMediaButtonConstraints = [
+            playMediaButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            playMediaButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ]
         
         NSLayoutConstraint.activate(mediaPosterConstraints)
-        
+        NSLayoutConstraint.activate(mediaLabelConstraints)
+        NSLayoutConstraint.activate(playMediaButtonConstraints)
     }
     
     public func configure(with media: MediaViewModel) {
         Task {
-            self.mediaPosterImageView.image = await ImageCache.shared.downloadImage(urlString: media.posterURL)
+            self.mediaPosterImageView.image = await ImageCache.shared.downloadImage(urlString: "https://image.tmdb.org/t/p/w500/\(media.posterURL)")
         }
+
         mediaLabel.text = media.mediaName
     }
     

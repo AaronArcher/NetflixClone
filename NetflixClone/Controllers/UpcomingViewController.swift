@@ -13,7 +13,7 @@ class UpcomingViewController: UIViewController {
 
     private let upcomingTable: UITableView = {
         let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(MediaTableViewCell.self, forCellReuseIdentifier: MediaTableViewCell.identifier)
         return table
     }()
     
@@ -62,9 +62,19 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = media[indexPath.row].original_name ?? media[indexPath.row].original_title ?? "Unknown"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.identifier, for: indexPath) as? MediaTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let media = media[indexPath.row]
+        cell.configure(with: MediaViewModel(mediaName: media.original_title ?? media.original_name ?? "Unknown", posterURL: media.poster_path ?? ""))
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
     }
     
 }
