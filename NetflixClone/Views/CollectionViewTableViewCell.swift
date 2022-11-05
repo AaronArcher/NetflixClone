@@ -14,7 +14,6 @@ class CollectionViewTableViewCell: UITableViewCell {
     private var media = [Media]()
     
     private let collectionView: UICollectionView = {
-        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 140, height: 200)

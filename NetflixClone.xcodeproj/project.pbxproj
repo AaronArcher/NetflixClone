@@ -23,6 +23,8 @@
 		EEAE6B6F2914498600A9FB9C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B6E2914498600A9FB9C /* Extensions.swift */; };
 		EEAE6B7329145E5100A9FB9C /* MediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B7229145E5100A9FB9C /* MediaCollectionViewCell.swift */; };
 		EEAE6B752914601900A9FB9C /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B742914601900A9FB9C /* ImageCache.swift */; };
+		EEAE6B772916707F00A9FB9C /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B762916707F00A9FB9C /* MediaTableViewCell.swift */; };
+		EEAE6B792916737700A9FB9C /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B782916737700A9FB9C /* MediaViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		EEAE6B6E2914498600A9FB9C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EEAE6B7229145E5100A9FB9C /* MediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEAE6B742914601900A9FB9C /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		EEAE6B762916707F00A9FB9C /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		EEAE6B782916737700A9FB9C /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				EEAE6B66291076FD00A9FB9C /* CollectionViewTableViewCell.swift */,
 				EEAE6B682913125D00A9FB9C /* HeroHeaderView.swift */,
 				EEAE6B7229145E5100A9FB9C /* MediaCollectionViewCell.swift */,
+				EEAE6B762916707F00A9FB9C /* MediaTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 		EEAE6B622910768A00A9FB9C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EEAE6B782916737700A9FB9C /* MediaViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -219,12 +225,14 @@
 				EEAE6B4929106E4B00A9FB9C /* MainTabBarViewController.swift in Sources */,
 				EEAE6B67291076FD00A9FB9C /* CollectionViewTableViewCell.swift in Sources */,
 				EEAE6B7329145E5100A9FB9C /* MediaCollectionViewCell.swift in Sources */,
+				EEAE6B772916707F00A9FB9C /* MediaTableViewCell.swift in Sources */,
 				EEAE6B6B2914415600A9FB9C /* APICaller.swift in Sources */,
 				EEAE6B60291070AC00A9FB9C /* DownloadsViewController.swift in Sources */,
 				EEAE6B692913125D00A9FB9C /* HeroHeaderView.swift in Sources */,
 				EEAE6B4529106E4B00A9FB9C /* AppDelegate.swift in Sources */,
 				EEAE6B6F2914498600A9FB9C /* Extensions.swift in Sources */,
 				EEAE6B4729106E4B00A9FB9C /* SceneDelegate.swift in Sources */,
+				EEAE6B792916737700A9FB9C /* MediaViewModel.swift in Sources */,
 				EEAE6B5C2910707D00A9FB9C /* UpcomingViewController.swift in Sources */,
 				EEAE6B6D291445F400A9FB9C /* Media.swift in Sources */,
 				EEAE6B752914601900A9FB9C /* ImageCache.swift in Sources */,
