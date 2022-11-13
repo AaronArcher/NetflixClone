@@ -26,6 +26,9 @@
 		EEAE6B772916707F00A9FB9C /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B762916707F00A9FB9C /* MediaTableViewCell.swift */; };
 		EEAE6B792916737700A9FB9C /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B782916737700A9FB9C /* MediaViewModel.swift */; };
 		EEAE6B7B2921324400A9FB9C /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B7A2921324400A9FB9C /* SearchResultsViewController.swift */; };
+		EEAE6B7F2921412600A9FB9C /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B7E2921412600A9FB9C /* YoutubeSearchResponse.swift */; };
+		EEAE6B812921512300A9FB9C /* MediaPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B802921512300A9FB9C /* MediaPreviewViewController.swift */; };
+		EEAE6B83292153EA00A9FB9C /* MediaPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B82292153EA00A9FB9C /* MediaPreviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		EEAE6B762916707F00A9FB9C /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		EEAE6B782916737700A9FB9C /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
 		EEAE6B7A2921324400A9FB9C /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		EEAE6B7E2921412600A9FB9C /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
+		EEAE6B802921512300A9FB9C /* MediaPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewViewController.swift; sourceTree = "<group>"; };
+		EEAE6B82292153EA00A9FB9C /* MediaPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAE6B782916737700A9FB9C /* MediaViewModel.swift */,
+				EEAE6B82292153EA00A9FB9C /* MediaPreviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -129,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAE6B6C291445F400A9FB9C /* Media.swift */,
+				EEAE6B7E2921412600A9FB9C /* YoutubeSearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAE6B7A2921324400A9FB9C /* SearchResultsViewController.swift */,
+				EEAE6B802921512300A9FB9C /* MediaPreviewViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -242,7 +251,9 @@
 			files = (
 				EEAE6B5E2910709100A9FB9C /* SearchViewController.swift in Sources */,
 				EEAE6B7B2921324400A9FB9C /* SearchResultsViewController.swift in Sources */,
+				EEAE6B812921512300A9FB9C /* MediaPreviewViewController.swift in Sources */,
 				EEAE6B4929106E4B00A9FB9C /* MainTabBarViewController.swift in Sources */,
+				EEAE6B83292153EA00A9FB9C /* MediaPreviewViewModel.swift in Sources */,
 				EEAE6B67291076FD00A9FB9C /* CollectionViewTableViewCell.swift in Sources */,
 				EEAE6B7329145E5100A9FB9C /* MediaCollectionViewCell.swift in Sources */,
 				EEAE6B772916707F00A9FB9C /* MediaTableViewCell.swift in Sources */,
@@ -252,6 +263,7 @@
 				EEAE6B4529106E4B00A9FB9C /* AppDelegate.swift in Sources */,
 				EEAE6B6F2914498600A9FB9C /* Extensions.swift in Sources */,
 				EEAE6B4729106E4B00A9FB9C /* SceneDelegate.swift in Sources */,
+				EEAE6B7F2921412600A9FB9C /* YoutubeSearchResponse.swift in Sources */,
 				EEAE6B792916737700A9FB9C /* MediaViewModel.swift in Sources */,
 				EEAE6B5C2910707D00A9FB9C /* UpcomingViewController.swift in Sources */,
 				EEAE6B6D291445F400A9FB9C /* Media.swift in Sources */,
