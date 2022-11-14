@@ -57,6 +57,14 @@ class HeroHeaderView: UIView {
         fatalError()
     }
     
+    public func configure(with model: MediaViewModel) {
+        
+        Task {
+            self.heroImageView.image = await ImageCache.shared.downloadImage(urlString: "https://image.tmdb.org/t/p/w500/\(model.posterURL)")
+        }
+        
+    }
+    
     private func addGradient() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [

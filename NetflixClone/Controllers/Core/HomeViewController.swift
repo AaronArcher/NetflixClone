@@ -17,6 +17,10 @@ enum Sections: Int {
 
 class HomeViewController: UIViewController {
     
+    private var randomTrendingMovie: Media?
+    
+    private var headerView: HeroHeaderView?
+    
     let sectionTitles = ["Trending Movies", "Trending TV", "Popular", "Upcoming Movies", "Top Rated"]
     
     private let homeFeedTableView = {
@@ -36,9 +40,9 @@ class HomeViewController: UIViewController {
         
         configureNavBar()
         
-        let headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTableView.tableHeaderView = headerView
-                
+        configureHeroHeaderView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,6 +50,23 @@ class HomeViewController: UIViewController {
         homeFeedTableView.frame = view.bounds
     }
     
+    private func configureHeroHeaderView() {
+        
+        APICaller.shared.getTrendingMovies { [weak self] result in
+            switch result {
+            case .success(let movies):
+                DispatchQueue.main.async {
+                    let randomMovie = movies.randomElement()
+                    self?.randomTrendingMovie = randomMovie
+                    self?.headerView?.configure(with: MediaViewModel(mediaName: randomMovie?.original_title ?? "", posterURL: randomMovie?.poster_path ?? ""))
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
     
     private func configureNavBar() {
         var image = UIImage(named: "netflixLogo")
