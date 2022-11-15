@@ -86,9 +86,31 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return 140
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedMedia = media[indexPath.row]
+        guard let mediaName = selectedMedia.original_title ?? selectedMedia.original_name else { return }
+        
+        APICaller.shared.getMovie(with: mediaName) { [weak self] result in
+            switch result {
+            case .success(let movie):
+                
+                DispatchQueue.main.async {
+                    let vc = MediaPreviewViewController()
+                    vc.configure(with: MediaPreviewViewModel(mediaTitle: mediaName, youtubeVideo: movie, mediaOverview: selectedMedia.overview ?? ""))
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
 }
 
-extension SearchViewController: UISearchResultsUpdating {
+extension SearchViewController: UISearchResultsUpdating, SearchResultsViewControllerDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
@@ -97,6 +119,7 @@ extension SearchViewController: UISearchResultsUpdating {
               !query.trimmingCharacters(in: .whitespaces).isEmpty,
               query.trimmingCharacters(in: .whitespaces).count >= 3,
               let resultsController = searchController.searchResultsController as? SearchResultsViewController else { return }
+        resultsController.delegate = self
         
         APICaller.shared.search(with: query) { result in
             DispatchQueue.main.async {
@@ -110,6 +133,14 @@ extension SearchViewController: UISearchResultsUpdating {
             }
         }
         
+    }
+    
+    func searchResultsViewControllerDidTapItem(_ viewModel: MediaPreviewViewModel) {
+        DispatchQueue.main.async {
+            let vc = MediaPreviewViewController()
+            vc.configure(with: viewModel)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     
