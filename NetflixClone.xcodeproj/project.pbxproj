@@ -29,6 +29,8 @@
 		EEAE6B7F2921412600A9FB9C /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B7E2921412600A9FB9C /* YoutubeSearchResponse.swift */; };
 		EEAE6B812921512300A9FB9C /* MediaPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B802921512300A9FB9C /* MediaPreviewViewController.swift */; };
 		EEAE6B83292153EA00A9FB9C /* MediaPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6B82292153EA00A9FB9C /* MediaPreviewViewModel.swift */; };
+		EEAE6BA9292C09E200A9FB9C /* NetflixCloneModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6BA7292C09E200A9FB9C /* NetflixCloneModel.xcdatamodeld */; };
+		EEAE6BAB292D548100A9FB9C /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE6BAA292D548100A9FB9C /* DataPersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		EEAE6B7E2921412600A9FB9C /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		EEAE6B802921512300A9FB9C /* MediaPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewViewController.swift; sourceTree = "<group>"; };
 		EEAE6B82292153EA00A9FB9C /* MediaPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewViewModel.swift; sourceTree = "<group>"; };
+		EEAE6BA8292C09E200A9FB9C /* NetflixCloneModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixCloneModel.xcdatamodel; sourceTree = "<group>"; };
+		EEAE6BAA292D548100A9FB9C /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				EEAE6B65291076BB00A9FB9C /* Managers */,
 				EEAE6B632910769300A9FB9C /* Models */,
 				EEAE6B64291076B200A9FB9C /* Resources */,
+				EEAE6BA7292C09E200A9FB9C /* NetflixCloneModel.xcdatamodeld */,
 				EEAE6B4D29106E4F00A9FB9C /* Assets.xcassets */,
 				EEAE6B4F29106E4F00A9FB9C /* LaunchScreen.storyboard */,
 				EEAE6B5229106E4F00A9FB9C /* Info.plist */,
@@ -154,6 +159,7 @@
 			children = (
 				EEAE6B6A2914415600A9FB9C /* APICaller.swift */,
 				EEAE6B742914601900A9FB9C /* ImageCache.swift */,
+				EEAE6BAA292D548100A9FB9C /* DataPersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -264,11 +270,13 @@
 				EEAE6B6F2914498600A9FB9C /* Extensions.swift in Sources */,
 				EEAE6B4729106E4B00A9FB9C /* SceneDelegate.swift in Sources */,
 				EEAE6B7F2921412600A9FB9C /* YoutubeSearchResponse.swift in Sources */,
+				EEAE6BA9292C09E200A9FB9C /* NetflixCloneModel.xcdatamodeld in Sources */,
 				EEAE6B792916737700A9FB9C /* MediaViewModel.swift in Sources */,
 				EEAE6B5C2910707D00A9FB9C /* UpcomingViewController.swift in Sources */,
 				EEAE6B6D291445F400A9FB9C /* Media.swift in Sources */,
 				EEAE6B752914601900A9FB9C /* ImageCache.swift in Sources */,
 				EEAE6B5A2910705A00A9FB9C /* HomeViewController.swift in Sources */,
+				EEAE6BAB292D548100A9FB9C /* DataPersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +484,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EEAE6BA7292C09E200A9FB9C /* NetflixCloneModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EEAE6BA8292C09E200A9FB9C /* NetflixCloneModel.xcdatamodel */,
+			);
+			currentVersion = EEAE6BA8292C09E200A9FB9C /* NetflixCloneModel.xcdatamodel */;
+			path = NetflixCloneModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EEAE6B3929106E4B00A9FB9C /* Project object */;
 }
